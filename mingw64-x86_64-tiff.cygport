@@ -1,0 +1,29 @@
+NAME="mingw64-x86_64-tiff"
+VERSION=3.9.6
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="TIFF graphics library for Win64 toolchain"
+DESCRIPTION="This package does NOT contain cygwin binaries.  Instead, it
+contains msvcrt-linked binaries (aka 'mingw').  It is for use with the
+mingw64-x86_64-gcc cross compiler, and installs into the
+/usr/x86_64-w64-mingw32/sys-root/mingw/{lib,include} directories."
+HOMEPAGE="http://www.remotesensing.org/libtiff/"
+SRC_URI="ftp://ftp.remotesensing.org/pub/libtiff/tiff-${VERSION}.tar.gz"
+SRC_DIR="tiff-${VERSION}"
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+PATCH_URI="http://pkgs.fedoraproject.org/cgit/libtiff.git/plain/libtiff-CVE-2012-1173.patch?h=f17
+	   http://pkgs.fedoraproject.org/cgit/libtiff.git/plain/libtiff-CVE-2012-2088.patch?h=f17
+	   http://pkgs.fedoraproject.org/cgit/libtiff.git/plain/libtiff-CVE-2012-2113.patch?h=f17
+	   http://pkgs.fedoraproject.org/cgit/libtiff.git/plain/libtiff-CVE-2012-3401.patch?h=f17"
+
+CYGCONF_ARGS="
+	--enable-shared --enable-static
+	--enable-cxx
+	--enable-jpeg
+	--enable-zlib
+	--without-x
+"
+MAKEOPTS+=" bin_PROGRAMS= dist_doc_DATA= dist_man1_MANS= dist_man3_MANS= "
+KEEP_LA_FILES="none"
