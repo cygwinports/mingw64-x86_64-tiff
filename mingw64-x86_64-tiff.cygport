@@ -1,5 +1,5 @@
 NAME="mingw64-x86_64-tiff"
-VERSION=3.9.6
+VERSION=3.9.7
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="TIFF graphics library for Win64 toolchain"
@@ -12,11 +12,6 @@ SRC_URI="ftp://ftp.remotesensing.org/pub/libtiff/tiff-${VERSION}.tar.gz"
 SRC_DIR="tiff-${VERSION}"
 CROSS_HOST="x86_64-w64-mingw32"
 inherit cross
-
-PATCH_URI="http://pkgs.fedoraproject.org/cgit/libtiff.git/plain/libtiff-CVE-2012-1173.patch?h=f17
-	   http://pkgs.fedoraproject.org/cgit/libtiff.git/plain/libtiff-CVE-2012-2088.patch?h=f17
-	   http://pkgs.fedoraproject.org/cgit/libtiff.git/plain/libtiff-CVE-2012-2113.patch?h=f17
-	   http://pkgs.fedoraproject.org/cgit/libtiff.git/plain/libtiff-CVE-2012-3401.patch?h=f17"
 
 CYGCONF_ARGS="
 	--enable-shared --enable-static
