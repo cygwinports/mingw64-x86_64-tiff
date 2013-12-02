@@ -1,6 +1,9 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
 NAME="mingw64-x86_64-tiff"
 VERSION=3.9.7
-RELEASE=1
+RELEASE=2
 CATEGORY="Devel"
 SUMMARY="TIFF graphics library for Win64 toolchain"
 DESCRIPTION="This package does NOT contain cygwin binaries.  Instead, it
@@ -10,11 +13,8 @@ mingw64-x86_64-gcc cross compiler, and installs into the
 HOMEPAGE="http://www.remotesensing.org/libtiff/"
 SRC_URI="ftp://ftp.remotesensing.org/pub/libtiff/tiff-${VERSION}.tar.gz"
 SRC_DIR="tiff-${VERSION}"
-CROSS_HOST="x86_64-w64-mingw32"
-inherit cross
 
 CYGCONF_ARGS="
-	--enable-shared --enable-static
 	--enable-cxx
 	--enable-jpeg
 	--enable-zlib
