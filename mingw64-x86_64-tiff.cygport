@@ -2,8 +2,8 @@ CROSS_HOST="x86_64-w64-mingw32"
 inherit cross
 
 NAME="mingw64-x86_64-tiff"
-VERSION=3.9.7
-RELEASE=2
+VERSION=4.0.3
+RELEASE=1
 CATEGORY="Devel"
 SUMMARY="TIFF graphics library for Win64 toolchain"
 DESCRIPTION="This package does NOT contain cygwin binaries.  Instead, it
