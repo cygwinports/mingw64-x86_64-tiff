@@ -2,7 +2,7 @@ CROSS_HOST="x86_64-w64-mingw32"
 inherit cross
 
 NAME="mingw64-x86_64-tiff"
-VERSION=4.0.6
+VERSION=4.0.7
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="TIFF graphics library for Win64 toolchain"
@@ -10,9 +10,28 @@ DESCRIPTION="This package does NOT contain cygwin binaries.  Instead, it
 contains msvcrt-linked binaries (aka 'mingw').  It is for use with the
 mingw64-x86_64-gcc cross compiler, and installs into the
 /usr/x86_64-w64-mingw32/sys-root/mingw/{lib,include} directories."
-HOMEPAGE="http://www.remotesensing.org/libtiff/"
-SRC_URI="ftp://ftp.remotesensing.org/pub/libtiff/tiff-${VERSION}.tar.gz"
+HOMEPAGE="http://www.simplesystems.org/libtiff/"
+SRC_URI="ftp://ftp.simplesystems.org/pub/libtiff/tiff-${VERSION}.tar.gz"
 SRC_DIR="tiff-${VERSION}"
+PATCH_URI="
+	fedora/libtiff-am-version.patch
+	fedora/libtiff-hylafax-fix.patch
+	fedora/libtiff-make-check.patch
+	fedora/libtiff-CVE-2016-10266.patch
+	fedora/libtiff-CVE-2016-10267.patch
+	fedora/libtiff-CVE-2016-10268.patch
+	fedora/libtiff-CVE-2016-10269.patch
+	fedora/libtiff-CVE-2016-10270.patch
+	fedora/libtiff-CVE-2016-10271_10272.patch
+	fedora/libtiff-CVE-2017-7592.patch
+	fedora/libtiff-CVE-2017-7593.patch
+	fedora/libtiff-CVE-2017-7594.patch
+	fedora/libtiff-CVE-2017-7595.patch
+	fedora/libtiff-CVE-2017-7596_7597_7599_7600.patch
+	fedora/libtiff-CVE-2017-7598.patch
+	fedora/libtiff-CVE-2017-7601.patch
+	fedora/libtiff-CVE-2017-7602.patch
+"
 
 CYGCONF_ARGS="
 	--enable-cxx
